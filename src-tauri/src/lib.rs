@@ -1,11 +1,14 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 pub mod encrypt_commands;
+pub mod kyc_validation;
 
 use crate::encrypt_commands::{
     decrypt_message, decrypt_room_key_from_sender, encrypt_message, encrypt_room_key_for_user,
     generate_identity_keypair, get_all_access_tickets, greet, load_access_ticket_by_room,
     remove_access_ticket_by_room, store_access_ticket, update_access_ticket,
 };
+
+use crate::kyc_validation::kyc_validation_zkp;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -23,7 +26,8 @@ pub fn run() {
             load_access_ticket_by_room,
             remove_access_ticket_by_room,
             store_access_ticket,
-            update_access_ticket
+            update_access_ticket,
+            kyc_validation_zkp,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

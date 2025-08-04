@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "identifier": "com.shivarthu.encrypted-chat-app",
   "build": {
-    "beforeDevCommand": "trunk serve",
+    "beforeDevCommand": "cd ui && trunk serve",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "trunk build",
-    "frontendDist": "../dist"
+    "beforeBuildCommand": "cd ui && trunk build",
+    "frontendDist": "../ui/dist"
   },
   "app": {
     "withGlobalTauri": true,

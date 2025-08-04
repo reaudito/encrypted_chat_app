@@ -29,3 +29,6 @@ ed25519-dalek = {version = "2.2", features = ["rand_core"] }
 sha2 = "0.10"
 base64 = "0.22.1"
 tauri-plugin-store = "2"
+methods = { path = "../methods" }
+risc0-zkvm = { version = "^2.3.1" }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
